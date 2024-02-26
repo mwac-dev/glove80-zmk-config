@@ -40,6 +40,16 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+
+        arrowfuncs: arrowfuncs {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ARROWFUNCS";
+            bindings = <&thin_arrowfunc>, <&thick_arrowfunc>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -81,7 +91,7 @@
         thick_arrowfunc: thick_arrowfunc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp KP_EQUAL &kp GREATER_THAN>;
+            bindings = <&kp EQUAL &kp GREATER_THAN>;
             label = "THICK_ARROWFUNC";
         };
 
@@ -90,6 +100,8 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS &kp GREATER_THAN>;
             label = "THIN_ARROWFUNC";
+            wait-ms = <0>;
+            tap-ms = <0>;
         };
     };
 
@@ -161,12 +173,12 @@
 
         Symbols {
             bindings = <
-&none  &none  &none          &none            &none                                                                                            &none                            &none                              &none  &none  &none
-&none  &none  &none          &none            &none                &none                                            &none                      &none                            &none                              &none  &none  &none
-&none  &none  &none          &none            &none                &none                                            &none                      &mt DOUBLE_QUOTES SINGLE_QUOTE   &none                              &none  &none  &none
-&none  &none  &none          &none            &mt COLON SEMICOLON  &none                                            &mt UNDERSCORE MINUS       &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &none  &none  &none
-&none  &none  &none          &none            &none                &none  &none  &none  &none  &none  &none  &none  &mt KP_DIVIDE KP_MULTIPLY  &mt LESS_THAN LEFT_BRACKET       &mt GREATER_THAN RIGHT_BRACE       &none  &none  &none
-&none  &none  &kp LC(SLASH)  &thin_arrowfunc  &thick_arrowfunc            &none  &none  &none  &none  &none  &none                             &none                            &none                              &none  &none  &none
+&none  &none          &none  &none            &none                                                                                                      &none                            &none                              &none  &none  &none
+&none  &none          &none  &none            &none                &none                                                      &none                      &none                            &none                              &none  &none  &none
+&none  &none          &none  &none            &none                &none                                                      &none                      &mt DOUBLE_QUOTES SINGLE_QUOTE   &mt PIPE AMPERSAND                 &none  &none  &none
+&none  &kp LC(SLASH)  &none  &none            &mt COLON SEMICOLON  &arrowfuncs 0 0                                            &mt UNDERSCORE MINUS       &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &none  &none  &none
+&none  &none          &none  &none            &none                &none            &none  &none  &none  &none  &none  &none  &mt KP_DIVIDE KP_MULTIPLY  &mt LESS_THAN LEFT_BRACKET       &mt GREATER_THAN RIGHT_BRACKET     &none  &none  &none
+&none  &none          &none  &thin_arrowfunc  &thick_arrowfunc                      &none  &none  &none  &none  &none  &none                             &none                            &none                              &none  &none  &none
             >;
         };
     };
