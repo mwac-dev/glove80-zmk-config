@@ -140,12 +140,12 @@
 
         Symbols {
             bindings = <
-&none       &none            &none          &none                 &none                                                                                                  &none              &none             &none         &none  &none
-&none       &none            &none          &kp LESS_THAN         &kp GREATER_THAN       &none                                                &none                      &none              &none             &none         &none  &none
-&none       &kp EXCLAMATION  &kp PIPE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp COLON                                            &none                      &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &none         &none  &none
-&kp ESCAPE  &kp KP_DOT       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI                                             &kp UNDER                  &kp PLUS           &kp KP_SUBTRACT   &kp KP_EQUAL  &none  &none
-&none       &kp QUESTION     &kp DOLLAR     &kp LEFT_BRACE        &kp RIGHT_BRACE        &none      &none  &none  &none  &none  &none  &none  &mt KP_DIVIDE KP_MULTIPLY  &kp KP_MULTIPLY    &kp KP_DIVIDE     &none         &none  &none
-&none       &none            &none          &thin_arrowfunc       &thick_arrowfunc                  &kp I  &none  &none  &none  &none  &none                             &none              &none             &none         &none  &none
+&none       &none            &none          &none                 &none                                                                                  &none              &none             &none  &none  &none
+&none       &none            &none          &kp LESS_THAN         &kp GREATER_THAN       &none                                                &none      &none              &none             &none  &none  &none
+&none       &kp EXCLAMATION  &kp PIPE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none                                                &kp GRAVE  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &none  &none  &none
+&kp ESCAPE  &kp KP_DOT       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI                                             &kp UNDER  &kp PLUS           &kp KP_SUBTRACT   &none  &none  &none
+&none       &kp QUESTION     &kp DOLLAR     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON  &none  &none  &none  &none  &none  &none  &kp EQUAL  &kp KP_MULTIPLY    &kp KP_DIVIDE     &none  &none  &none
+&none       &none            &none          &thin_arrowfunc       &thick_arrowfunc                  &kp I  &none  &none  &none  &none  &none             &none              &none             &none  &none  &none
             >;
         };
 
