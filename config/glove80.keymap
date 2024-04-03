@@ -105,6 +105,20 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        left_shift_combo {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <35 36>;
+        };
+
+        right_shift_combo {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <44 43>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -118,12 +132,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE        &kp F2            &kp F3   &kp F4        &kp F5                                                                                                &kp F6     &kp F7            &kp F8             &kp F9                &kp F10
-&kp F11           &kp N1            &kp N2   &kp N3        &kp N4        &kp N5                                                                          &kp N6  &kp N7     &kp N8            &kp N9             &kp N0                &kp MINUS
-&kp TAB           &kp Q             &kp W    &kp E         &kp R         &kp T                                                                           &kp Y   &kp U      &kp I             &kp O              &kp P                 &kp BSLH
-&kp LEFT_SHIFT    &mt LEFT_SHIFT A  &kp S    &kp D         &kp F         &kp G                                                                           &kp H   &kp J      &kp K             &kp L              &mt RIGHT_SHIFT SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z             &kp X    &kp C         &kp V         &kp B   &kp ENTER  &none           &magic 4 0  &kp GRAVE  &none  &kp DELETE     &kp N   &kp M      &kp COMMA         &kp DOT            &kp FSLH              &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp LEFT_ALT      &kp END  &kp LEFT_ALT  &kp CAPSLOCK          &kp SPACE  &kp LEFT_SHIFT  &mo 3       &none      &mo 2  &kp BACKSPACE          &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RGUI              &kp RIGHT_CONTROL
+&kp ESCAPE        &kp F2        &kp F3   &kp F4        &kp F5                                                                                                &kp F6     &kp F7            &kp F8             &kp F9    &kp F10
+&kp F11           &kp N1        &kp N2   &kp N3        &kp N4        &kp N5                                                                          &kp N6  &kp N7     &kp N8            &kp N9             &kp N0    &kp MINUS
+&kp TAB           &kp Q         &kp W    &kp E         &kp R         &kp T                                                                           &kp Y   &kp U      &kp I             &kp O              &kp P     &kp BSLH
+&kp LEFT_SHIFT    &kp A         &kp S    &kp D         &kp F         &kp G                                                                           &kp H   &kp J      &kp K             &kp L              &kp SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z         &kp X    &kp C         &kp V         &kp B   &kp ENTER  &none           &magic 4 0  &kp GRAVE  &none  &kp DELETE     &kp N   &kp M      &kp COMMA         &kp DOT            &kp FSLH  &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp END  &kp LEFT_ALT  &kp CAPSLOCK          &kp SPACE  &kp LEFT_SHIFT  &mo 3       &none      &mo 2  &kp BACKSPACE          &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RGUI  &kp RIGHT_CONTROL
             >;
         };
 
