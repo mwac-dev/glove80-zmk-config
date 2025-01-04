@@ -50,6 +50,34 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        HRM_L: HRM_L {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_L";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <23 35 36 37 48 49 0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36 37 38 39 48 49 50 51 46 47 64 65 66 67 68 52 53 54 71 70 69 55 56 57 74 73 72>;
+            hold-trigger-on-release;
+        };
+
+        HMR_R: HMR_R {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_R";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <5 6 7 8 9 17 18 19 20 21 29 30 31 32 33 41 42 43 44 45 59 60 61 62 63 75 76 77 78 79 5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42 43 44 45 54 55 56 57 58 59 60 61 62 63 73 74 75 76 77 78 79 52 53 54 55 56 70 71 72 69>;
+        };
     };
 
     macros {
@@ -105,19 +133,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        left_shift_combo {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <35 36>;
-        };
-
-        right_shift_combo {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <44 43>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -132,12 +148,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE        &kp F2    &kp F3    &kp F4     &kp F5                                                                                                        &kp F6     &kp F7            &kp F8             &kp F9    &mt F12 F10
-&mt F1 F11        &kp N1    &kp N2    &kp N3     &kp N4        &kp N5                                                                                  &kp N6  &kp N7     &kp N8            &kp N9             &kp N0    &kp MINUS
-&kp TAB           &kp Q     &kp W     &kp E      &kp R         &kp T                                                                                   &kp Y   &kp U      &kp I             &kp O              &kp P     &kp BSLH
-&kp LEFT_SHIFT    &kp A     &kp S     &kp D      &kp F         &kp G                                                                                   &kp H   &kp J      &kp K             &kp L              &kp SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z     &kp X     &kp C      &kp V         &kp B   &kp ENTER  &mo 1           &magic 4 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M      &kp COMMA         &kp DOT            &kp FSLH  &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp LALT  &kp LALT  &kp GRAVE  &kp CAPSLOCK          &kp SPACE  &kp LEFT_SHIFT  &mo 3       &kp RIGHT_ALT  &mo 2      &kp BACKSPACE          &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RGUI  &kp RIGHT_CONTROL
+&kp ESCAPE        &kp F2             &kp F3             &kp F4               &kp F5                                                                                                          &kp F6          &kp F7                &kp F8              &kp F9                 &mt F12 F10
+&mt F1 F11        &kp N1             &kp N2             &kp N3               &kp N4          &kp N5                                                                                  &kp N6  &kp N7          &kp N8                &kp N9              &kp N0                 &kp MINUS
+&kp TAB           &kp Q              &kp W              &kp E                &kp R           &kp T                                                                                   &kp Y   &kp U           &kp I                 &kp O               &kp P                  &kp BSLH
+&kp LEFT_SHIFT    &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LEFT_SHIFT D  &HRM_L LCTRL F  &kp G                                                                                   &kp H   &HMR_R RCTRL J  &HMR_R RIGHT_SHIFT K  &HMR_R RIGHT_ALT L  &HMR_R RIGHT_GUI SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z              &kp X              &kp C                &kp V           &kp B   &kp ENTER  &mo 1           &magic 4 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M           &kp COMMA             &kp DOT             &kp FSLH               &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp LALT           &kp LALT           &kp GRAVE            &kp CAPSLOCK            &kp SPACE  &kp LEFT_SHIFT  &mo 3       &kp RIGHT_ALT  &mo 2      &kp BACKSPACE          &kp EQUAL       &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp RGUI               &kp RIGHT_CONTROL
             >;
         };
 
