@@ -87,6 +87,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        parentheses_carrot_L: parentheses_carrot_L {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PARENTHESES_CARROT_L";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        parentheses_carrot_R: parentheses_carrot_R {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PARENTHESES_CARROT_R";
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -142,7 +160,34 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        backspace_combo {
+            bindings = <&kp BSPC>;
+            key-positions = <29 30>;
+        };
+
+        delete_combo {
+            bindings = <&kp DELETE>;
+            key-positions = <30 31>;
+        };
+
+        p_c_l {
+            bindings = <&parentheses_carrot_L>;
+            key-positions = <41 42>;
+        };
+
+        p_c_r {
+            bindings = <&parentheses_carrot_R>;
+            key-positions = <42 43>;
+        };
+
+        tab_combo {
+            bindings = <&kp TAB>;
+            key-positions = <36 37>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
