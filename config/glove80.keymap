@@ -29,7 +29,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 4>, <&to 4>;
+            bindings = <&mo 5>, <&to 5>;
         };
 
         magic: magic_hold_tap {
@@ -77,6 +77,15 @@
             flavor = "balanced";
             hold-trigger-on-release;
             hold-trigger-key-positions = <5 6 7 8 9 17 18 19 20 21 29 30 31 32 33 41 42 43 44 45 59 60 61 62 63 75 76 77 78 79 5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42 43 44 45 54 55 56 57 58 59 60 61 62 63 73 74 75 76 77 78 79 52 53 54 55 56 70 71 72 69>;
+        };
+
+        smart_shift: smart_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHIFT";
+            bindings = <&sk LSHIFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -148,12 +157,23 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE        &kp F2             &kp F3             &kp F4               &kp F5                                                                                                          &kp F6          &kp F7                &kp F8              &kp F9                 &mt F12 F10
-&mt F1 F11        &kp N1             &kp N2             &kp N3               &kp N4          &kp N5                                                                                  &kp N6  &kp N7          &kp N8                &kp N9              &kp N0                 &kp MINUS
-&kp TAB           &kp Q              &kp W              &kp E                &kp R           &kp T                                                                                   &kp Y   &kp U           &kp I                 &kp O               &kp P                  &kp BSLH
-&kp LEFT_SHIFT    &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LEFT_SHIFT D  &HRM_L LCTRL F  &kp G                                                                                   &kp H   &HMR_R RCTRL J  &HMR_R RIGHT_SHIFT K  &HMR_R RIGHT_ALT L  &HMR_R RIGHT_GUI SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z              &kp X              &kp C                &kp V           &kp B   &kp ENTER  &mo 1           &magic 4 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M           &kp COMMA             &kp DOT             &kp FSLH               &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp LALT           &kp LALT           &kp GRAVE            &kp CAPSLOCK            &kp SPACE  &kp LEFT_SHIFT  &mo 3       &kp RIGHT_ALT  &mo 2      &kp BACKSPACE          &kp EQUAL       &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp RGUI               &kp RIGHT_CONTROL
+&kp ESCAPE        &kp F2             &kp F3             &kp F4               &kp F5                                                                                                        &kp F6          &kp F7                &kp F8              &kp F9                 &mt F12 F10
+&mt F1 F11        &kp N1             &kp N2             &kp N3               &kp N4          &kp N5                                                                                &kp N6  &kp N7          &kp N8                &kp N9              &kp N0                 &kp MINUS
+&kp TAB           &kp Q              &kp W              &kp E                &kp R           &kp T                                                                                 &kp Y   &kp U           &kp I                 &kp O               &kp P                  &kp BSLH
+&kp LEFT_SHIFT    &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LEFT_SHIFT D  &HRM_L LCTRL F  &kp G                                                                                 &kp H   &HMR_R RCTRL J  &HMR_R RIGHT_SHIFT K  &HMR_R RIGHT_ALT L  &HMR_R RIGHT_GUI SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z              &kp X              &kp C                &kp V           &kp B   &kp ENTER  &mo 2         &magic 5 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M           &kp COMMA             &kp DOT             &kp FSLH               &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &to 1              &kp LALT           &kp GRAVE            &kp CAPSLOCK            &kp SPACE  &smart_shift  &mo 4       &kp RIGHT_ALT  &mo 3      &kp BACKSPACE          &kp EQUAL       &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp RGUI               &kp RIGHT_CONTROL
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp ESCAPE        &kp F2  &kp F3    &kp F4     &kp F5                                                                                                        &kp F6     &kp F7            &kp F8             &kp F9    &mt F12 F10
+&mt F1 F11        &kp N1  &kp N2    &kp N3     &kp N4        &kp N5                                                                                  &kp N6  &kp N7     &kp N8            &kp N9             &kp N0    &kp MINUS
+&kp TAB           &kp Q   &kp W     &kp E      &kp R         &kp T                                                                                   &kp Y   &kp U      &kp I             &kp O              &kp P     &kp BSLH
+&kp LEFT_SHIFT    &kp A   &kp S     &kp D      &kp F         &kp G                                                                                   &kp H   &kp J      &kp K             &kp L              &kp SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z   &kp X     &kp C      &kp V         &kp B   &kp ENTER  &mo 2           &magic 5 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M      &kp COMMA         &kp DOT            &kp FSLH  &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &to 0   &kp LALT  &kp GRAVE  &kp CAPSLOCK          &kp SPACE  &kp LEFT_SHIFT  &mo 4       &kp RIGHT_ALT  &mo 3      &kp BACKSPACE          &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RGUI  &kp RIGHT_CONTROL
             >;
         };
 
@@ -185,7 +205,7 @@
 &trans        &none         &none       &none       &none      &kp HOME                                                       &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
 &trans        &none         &none       &kp UP      &none      &kp END                                                        &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
 &trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                      &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
-&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &magic 4 0  &trans  &trans  &trans  &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &trans
+&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &magic 5 0  &trans  &trans  &trans  &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &trans
 &trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &to 0       &trans  &trans  &trans             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
             >;
         };
@@ -197,7 +217,7 @@
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 5
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 6
             >;
         };
 
