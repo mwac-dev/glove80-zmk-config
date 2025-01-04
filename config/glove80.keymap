@@ -109,7 +109,7 @@
         square_curly_L: square_curly_L {
             compatible = "zmk,behavior-mod-morph";
             label = "SQUARE_CURLY_L";
-            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_BRACE>;
+            bindings = <&kp LEFT_BRACE>, <&kp LEFT_BRACKET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -118,7 +118,25 @@
         square_curly_R: square_curly_R {
             compatible = "zmk,behavior-mod-morph";
             label = "SQUARE_CURLY_R";
-            bindings = <&kp RIGHT_BRACKET>, <&kp RIGHT_BRACE>;
+            bindings = <&kp RIGHT_BRACE>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        closed_parentheses_carrots: closed_parentheses_carrots {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CLOSED_PARENTHESES_CARROTS";
+            bindings = <&closed_parentheses>, <&closed_carrots>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        closed_square_curly: closed_square_curly {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CLOSED_SQUARE_CURLY";
+            bindings = <&closed_braces>, <&closed_bracket>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -176,6 +194,34 @@
             wait-ms = <0>;
             tap-ms = <0>;
         };
+
+        closed_parentheses: closed_parentheses {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR>;
+            label = "CLOSED_PARENTHESES";
+        };
+
+        closed_carrots: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT>;
+            label = "NEW_MACRO";
+        };
+
+        closed_braces: closed_braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE>;
+            label = "CLOSED_BRACES";
+        };
+
+        closed_bracket: closed_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET>;
+            label = "CLOSED_BRACKET";
+        };
     };
 
     combos {
@@ -214,6 +260,16 @@
         s_c_r {
             bindings = <&square_curly_R>;
             key-positions = <60 61>;
+        };
+
+        closed_p_c {
+            bindings = <&closed_parentheses_carrots>;
+            key-positions = <42 43 41>;
+        };
+
+        closed_s_c {
+            bindings = <&closed_square_curly>;
+            key-positions = <60 61 59>;
         };
     };
 
