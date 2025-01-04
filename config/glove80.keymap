@@ -105,6 +105,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        square_curly_L: square_curly_L {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SQUARE_CURLY_L";
+            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        square_curly_R: square_curly_R {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SQUARE_CURLY_R";
+            bindings = <&kp RIGHT_BRACKET>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -186,6 +204,16 @@
         tab_combo {
             bindings = <&kp TAB>;
             key-positions = <36 37>;
+        };
+
+        s_c_l {
+            bindings = <&square_curly_L>;
+            key-positions = <59 60>;
+        };
+
+        s_c_r {
+            bindings = <&square_curly_R>;
+            key-positions = <60 61>;
         };
     };
 
