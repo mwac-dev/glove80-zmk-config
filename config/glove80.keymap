@@ -271,6 +271,96 @@
             bindings = <&closed_square_curly>;
             key-positions = <60 61 59>;
         };
+
+        multiply {
+            bindings = <&kp ASTERISK>;
+            key-positions = <30 42>;
+        };
+
+        forward-slash {
+            bindings = <&kp SLASH>;
+            key-positions = <42 60>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <29 41>;
+        };
+
+        subtract {
+            bindings = <&kp MINUS>;
+            key-positions = <41 59>;
+        };
+
+        caret-up {
+            bindings = <&kp CARET>;
+            key-positions = <28 40>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <40 58>;
+        };
+
+        ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <31 43>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <43 61>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <27 39>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <26 38>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <25 37>;
+        };
+
+        at {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <24 36>;
+        };
+
+        exclamation {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <23 35>;
+        };
+
+        question {
+            bindings = <&kp QUESTION>;
+            key-positions = <35 47>;
+        };
+
+        period {
+            bindings = <&kp PERIOD>;
+            key-positions = <36 48>;
+        };
+
+        back-slash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <37 49>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <38 50>;
+        };
+
+        tilde {
+            bindings = <&kp GRAVE>;
+            key-positions = <39 51>;
+        };
     };
 
     keymap {
@@ -286,12 +376,23 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE        &kp F2             &kp F3             &kp F4               &kp F5                                                                                                        &kp F6          &kp F7                &kp F8              &kp F9                 &mt F12 F10
-&mt F1 F11        &kp N1             &kp N2             &kp N3               &kp N4          &kp N5                                                                                &kp N6  &kp N7          &kp N8                &kp N9              &kp N0                 &kp MINUS
-&kp TAB           &kp Q              &kp W              &kp E                &kp R           &kp T                                                                                 &kp Y   &kp U           &kp I                 &kp O               &kp P                  &kp BSLH
-&kp LEFT_SHIFT    &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LEFT_SHIFT D  &HRM_L LCTRL F  &kp G                                                                                 &kp H   &HMR_R RCTRL J  &HMR_R RIGHT_SHIFT K  &HMR_R RIGHT_ALT L  &HMR_R RIGHT_GUI SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z              &kp X              &kp C                &kp V           &kp B   &kp ENTER  &mo 2         &magic 5 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M           &kp COMMA             &kp DOT             &kp FSLH               &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &to 1              &kp LALT           &kp GRAVE            &kp CAPSLOCK            &kp SPACE  &smart_shift  &mo 4       &kp RIGHT_ALT  &mo 3      &kp BACKSPACE          &kp EQUAL       &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp RGUI               &kp RIGHT_CONTROL
+&kp ESCAPE        &kp F2             &kp F3             &kp F4               &kp F5                                                                                                          &kp F6          &kp F7                &kp F8              &kp F9                 &mt F12 F10
+&mt F1 F11        &kp N1             &kp N2             &kp N3               &kp N4          &kp N5                                                                                  &kp N6  &kp N7          &kp N8                &kp N9              &kp N0                 &kp MINUS
+&kp TAB           &kp Q              &kp W              &kp E                &kp R           &kp T                                                                                   &kp Y   &kp U           &kp I                 &kp O               &kp P                  &kp BSLH
+&kp LEFT_SHIFT    &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LEFT_SHIFT D  &HRM_L LCTRL F  &kp G                                                                                   &kp H   &HMR_R RCTRL J  &HMR_R RIGHT_SHIFT K  &HMR_R RIGHT_ALT L  &HMR_R RIGHT_GUI SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z              &kp X              &kp C                &kp V           &kp B   &kp ENTER    &mo 1         &magic 5 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M           &kp COMMA             &kp DOT             &kp FSLH               &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &to 2              &kp LALT           &kp GRAVE            &kp CAPSLOCK            &lt 1 SPACE  &smart_shift  &mo 4       &kp RIGHT_ALT  &mo 3      &kp BACKSPACE          &kp EQUAL       &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp RGUI               &kp RIGHT_CONTROL
+            >;
+        };
+
+        VimArrowKeys {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                         &trans         &trans  &trans     &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans         &trans         &trans  &trans     &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp PAGE_UP    &kp BACKSPACE  &trans  &kp DEL    &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LEFT       &kp DOWN       &kp UP  &kp RIGHT  &kp ESCAPE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PAGE_DOWN  &kp TAB        &trans  &trans     &trans      &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans                 &trans         &trans  &trans     &trans      &trans
             >;
         };
 
@@ -301,19 +402,8 @@
 &mt F1 F11        &kp N1  &kp N2    &kp N3     &kp N4        &kp N5                                                                                  &kp N6  &kp N7     &kp N8            &kp N9             &kp N0    &kp MINUS
 &kp TAB           &kp Q   &kp W     &kp E      &kp R         &kp T                                                                                   &kp Y   &kp U      &kp I             &kp O              &kp P     &kp BSLH
 &kp LEFT_SHIFT    &kp A   &kp S     &kp D      &kp F         &kp G                                                                                   &kp H   &kp J      &kp K             &kp L              &kp SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z   &kp X     &kp C      &kp V         &kp B   &kp ENTER  &mo 2           &magic 5 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M      &kp COMMA         &kp DOT            &kp FSLH  &kp RIGHT_SHIFT
+&kp LEFT_SHIFT    &kp Z   &kp X     &kp C      &kp V         &kp B   &kp ENTER  &mo 1           &magic 5 0  &kp GRAVE      &kp LC(B)  &kp DELETE     &kp N   &kp M      &kp COMMA         &kp DOT            &kp FSLH  &kp RIGHT_SHIFT
 &kp LEFT_CONTROL  &to 0   &kp LALT  &kp GRAVE  &kp CAPSLOCK          &kp SPACE  &kp LEFT_SHIFT  &mo 4       &kp RIGHT_ALT  &mo 3      &kp BACKSPACE          &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RGUI  &kp RIGHT_CONTROL
-            >;
-        };
-
-        VimArrowKeys {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                    &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans    &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans    &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans  &trans     &trans  &trans
             >;
         };
 
